@@ -1,6 +1,6 @@
-// .fn.py
-// Copyright 2017 Nathan Smith, All Rights Reserved
-// https://github.com/nathansmith339
+# .fn.py
+# Copyright 2017 Nathan Smith, All Rights Reserved
+# https://github.com/nathansmith339
 
 import glob, os, shutil, filecmp, sys, random, getpass
 
