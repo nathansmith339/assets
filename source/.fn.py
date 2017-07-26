@@ -58,8 +58,8 @@ def fetchAssets():
 
 
 if __name__ == "__main__":
-    if platform.platform()[:10] != 'Windows-10':
-        raise ValueError('This file is not compatible with %s. This is intended for Windows 10' % (platform.platform()))
+    if platform.system() != 'Windows':
+        raise ValueError('This file is not compatible with %s. This is intended for Windows' % (platform.system()))
     duplicate_file_count = 0
     count = fetchAssets()
     # check files for duplicates: both in name and data
