@@ -2,8 +2,7 @@
 # Copyright 2017 Nathan Smith, All Rights Reserved
 # https://github.com/nathansmith339
 
-import glob, os, shutil, filecmp, sys, random, getpass
-
+import platform, glob, os, shutil, filecmp, sys, random, getpass    
 ASSETS_ABS_PATH = 'C:\\Users\\' + getpass.getuser() + '\\AppData\\Local\\Packages\\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\\LocalState\\Assets'
 EXT = '.jpg'
 PICTURES_DIR = '.\\AssetsPictures'
@@ -59,6 +58,8 @@ def fetchAssets():
 
 
 if __name__ == "__main__":
+    if platform.platform()[:10] != 'Windows-10':
+        raise ValueError('This file is not compatible with %s. This is intended for Windows 10' % (platform.platform()))
     duplicate_file_count = 0
     count = fetchAssets()
     # check files for duplicates: both in name and data
